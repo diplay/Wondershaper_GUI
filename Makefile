@@ -1,4 +1,5 @@
-all: compile
+compile:
+	gcc -Wall -g speed.c -o speed `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0`
 
 install: compile
 	cp speed /usr/bin/speed
@@ -18,6 +19,3 @@ uninstall:
 
 clean:
 	rm -f speed
-
-compile:
-	gcc -Wall -g speed.c -o speed `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0`
