@@ -58,8 +58,11 @@ int get_adapters()
 
 void clear_speed(GtkWidget * widget, gpointer data)
 {
-	g_print("sudo wondershaper eth0 clear");
-	system("sudo wondershaper eth0 clear");
+	const char * a = gtk_entry_get_text(GTK_ENTRY(GTK_COMBO(cmbAdapters)->entry));
+	char str[256];
+	sprintf(str, "%s %s %s", "sudo wondershaper", "clear", a);
+	g_print("%s\n",str);
+	system(str);
 }
 
 void set_speed(GtkWidget * widget, gpointer data)
