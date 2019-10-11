@@ -1,0 +1,5 @@
+you need "libgtk2.0-dev" (example: Debian/Ubuntu: sudo apt-get install libgtk2.0-dev)
+then
+
+cd Wondershaper_GUI
+make
